@@ -4,6 +4,9 @@
 
 ![VEYROST-DEVKIT animated repository scanner](assets/animated-mark.svg)
 
+
+<p align="center"><a href="https://veyrost.is-a.dev/"><img src="https://img.shields.io/badge/Part%20of-VEYROST%20Ecosystem-8b7cf6?style=for-the-badge" alt="Part of VEYROST ecosystem"></a> <a href="https://github.com/Khayom1/Veyrost">Explore VEYROST ↗</a></p>
+
 ## Features
 
 - Repository checks for README quality, license, ignore rules, package metadata, tests, CI, and security documentation.
