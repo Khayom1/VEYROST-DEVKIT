@@ -1,0 +1,6 @@
+{
+  "maxFiles": 5000,
+  "excludedDirectories": [".git", "node_modules", "coverage", "dist", "build", "vendor"],
+  "ignorePatterns": ["*.min.js", "generated/**", "!generated/README.md"],
+  "failOn": "high"
+}
