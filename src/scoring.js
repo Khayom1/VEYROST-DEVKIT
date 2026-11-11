@@ -3,7 +3,7 @@ export function scoreRepository(scan) {
     ["README.md", scan.hasReadme, 15, "Add a README with purpose, installation, usage, and examples."],
     ["LICENSE", scan.hasLicense, 10, "Choose and add an open-source license."],
     [".gitignore", scan.hasGitignore, 5, "Ignore dependencies, build output, secrets, and local files."],
-    ["Package test script", !scan.hasPackageJson || Boolean(scan.packageJson?.scripts?.test), 10, "Add a test script to package.json."],
+    ["Package test script", scan.hasPackageJson && Boolean(scan.packageJson?.scripts?.test), 10, "Add a test script to package.json."],
     ["Automated tests", scan.hasTests, 15, "Add automated tests for critical behavior."],
     ["GitHub Actions", scan.hasCi, 15, "Add CI to run checks on pushes and pull requests."],
     ["CONTRIBUTING.md", scan.hasContributing, 5, "Explain how contributors can report issues and submit changes."],
