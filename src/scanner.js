@@ -13,7 +13,6 @@ export function walkFiles(root, options = {}) {
     try { entries = fs.readdirSync(dir, { withFileTypes:true }); } catch { return; }
     for (const entry of entries) {
       if (found.length >= maxFiles) break;
-      if (entry.name.startsWith(".") && entry.name !== ".github") continue;
       if (excluded.has(entry.name)) continue;
       const full = path.join(dir, entry.name);
       const relative = path.relative(root, full).split(path.sep).join("/");
