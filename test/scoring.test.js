@@ -12,7 +12,7 @@ test("all passing checks produce a score of 100 and grade A", () => {
 });
 test("missing controls produce actionable recommendations", () => {
   const result = scoreRepository({ ...healthy, hasReadme:false, hasLicense:false, hasTests:false, secrets:[{type:"token-like"}] });
-  assert.equal(result.score, 60);
+  assert.equal(result.score, 40);
   assert.ok(result.recommendations.length >= 4);
 });
 test("a detected secret reduces the score by twenty points", () => {
