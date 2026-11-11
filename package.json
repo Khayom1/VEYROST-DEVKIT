@@ -1,18 +1,21 @@
 {
   "name": "veyrost-devkit",
-  "version": "0.1.0",
-  "description": "Local-first repository health and security scanner",
+  "version": "0.2.0",
+  "description": "Local-first repository health, quality and security scanner",
+  "author": "Khayom Abdurahmonov (Khayom1)",
+  "license": "MIT",
   "type": "module",
-  "bin": {
-    "veyrost-devkit": "src/cli.js"
-  },
+  "bin": { "veyrost-devkit": "src/cli.js" },
   "scripts": {
     "test": "node --test",
     "check": "node --check src/cli.js && node --test",
-    "scan": "node src/cli.js ."
+    "scan": "node src/cli.js .",
+    "report:json": "node src/cli.js . --format json",
+    "report:svg": "node src/cli.js . --format svg --output health.svg"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "license": "MIT"
+  "engines": { "node": ">=18" },
+  "keywords": ["repository-health", "security-audit", "developer-tools", "quality-gates", "github-actions", "static-analysis"],
+  "repository": { "type": "git", "url": "https://github.com/Khayom1/VEYROST-DEVKIT.git" },
+  "bugs": { "url": "https://github.com/Khayom1/VEYROST-DEVKIT/issues" },
+  "homepage": "https://github.com/Khayom1/VEYROST-DEVKIT#readme"
 }
