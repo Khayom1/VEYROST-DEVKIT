@@ -31,7 +31,7 @@ try {
     const output=render(report,options.format);
     if (options.output) console.log("Report written to "+writeOutput(options.output,output));
     else process.stdout.write(output.endsWith("\n")?output:output+"\n");
-    process.exitCode=getExitCode(report,options.strict);
+    process.exitCode=getExitCode(report,options.strict,config.failOn);
   }
 } catch(error) {
   console.error("VEYROST-DEVKIT: "+error.message);
