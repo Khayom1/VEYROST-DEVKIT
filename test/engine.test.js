@@ -8,7 +8,7 @@ test("a well-formed sample repository receives a complete report",()=>{
   const root=fs.mkdtempSync(path.join(os.tmpdir(),"veyrost-engine-"));
   fs.mkdirSync(path.join(root,"test"));
   fs.mkdirSync(path.join(root,".github","workflows"),{recursive:true});
-  fs.writeFileSync(path.join(root,"README.md"),"# Sample\n\n## Installation\nInstall locally.\n\n## Usage\nRun the program.\n\n## License\nMIT.");
+  fs.writeFileSync(path.join(root,"README.md"),"# Sample\n\nA well documented example repository for testing the local project analysis engine with meaningful developer instructions and practical context.\n\n## Installation\nInstall locally with the supported Node.js runtime and use the documented test command.\n\n## Usage\nRun the program from the repository root and review its generated report for actionable maintenance guidance.\n\n## License\nMIT terms are provided in the included license file.");
   fs.writeFileSync(path.join(root,"LICENSE"),"MIT License\nPermission is hereby granted.");
   fs.writeFileSync(path.join(root,".gitignore"),".env\nnode_modules/\ncoverage/\n");
   fs.writeFileSync(path.join(root,"package.json"),JSON.stringify({name:"sample",description:"Sample project",engines:{node:">=18"},scripts:{test:"node --test"}}));
