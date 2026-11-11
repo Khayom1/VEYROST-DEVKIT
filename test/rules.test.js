@@ -17,6 +17,7 @@ test("license check recognizes a standard MIT heading",()=>{
 test("workflow check requires jobs and a trigger",()=>{
   const result=checkWorkflows({files:[".github/workflows/ci.yml"],readText:()=>"name: Broken\n"});
   assert.equal(result.passed,false);
+  assert.equal(result.points,0);
   assert.ok(result.findings.some((item)=>item.ruleId==="CI002"));
 });
 test("secret scanner identifies token-like values and line numbers",()=>{
