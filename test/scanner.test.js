@@ -13,11 +13,12 @@ test("walkFiles skips git metadata and dependencies", () => {
   try { assert.deepEqual(walkFiles(root), ["README.md"]); }
   finally { fs.rmSync(root, {recursive:true, force:true}); }
 });
-test("inspectRepository detects README, package metadata, and token patterns", () => {
+test("inspectRepository detects README, package metadata, and assembled token-like value", () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), "veyrost-"));
   fs.writeFileSync(path.join(root, "README.md"), "# Demo");
   fs.writeFileSync(path.join(root, "package.json"), '{"name":"demo"}');
-  fs.writeFileSync(path.join(root, "config.js"), 'const key = "ghp_ABCDEFGHIJKLMNOPQRSTUVWXYZ123456";');
+  const fakeToken = ["ghp_", "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"].join("");
+  fs.writeFileSync(path.join(root, "config.js"), "const key = " + JSON.stringify(fakeToken) + ";");
   try {
     const result = inspectRepository(root);
     assert.equal(result.hasReadme, true);
