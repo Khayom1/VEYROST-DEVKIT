@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use VEYROST-DEVKIT in research or technical work, cite this software."
+title: "VEYROST-DEVKIT"
+type: software
+authors:
+  - family-names: Abdurahmonov
+    given-names: Khayom
+repository-code: "https://github.com/Khayom1/VEYROST-DEVKIT"
+license: MIT
+version: 0.2.0
+date-released: 2026-11-11
